@@ -12,7 +12,6 @@ class Posts extends Component {
     }
     shouldComponentUpdate(newProps, newState) {
         if(newProps.postdata !==""){
-            alert("called")
             return true;
         }
        else{
@@ -40,7 +39,7 @@ class Posts extends Component {
        
         return(
             <div>
-                
+                    {this.props.isFething?"..Loading":null}
             </div>
         )
     }
@@ -48,7 +47,8 @@ class Posts extends Component {
 
 function mapStateToProps(state) {
     return{
-        postdata : state.posts.items
+        postdata : state.posts.items,
+        isFething: state.posts.isFetching
     }
   
     // console.log(state)

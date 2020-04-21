@@ -3,6 +3,7 @@ import {FETCH_POSTS, NEW_POSTS} from './types'
 
 export const fetchPosts = () => dispatch =>{
     console.log("got")
+    dispatch({ type: 'FETCH_REQUEST' });
     fetch("https://www.reddit.com/r/php/search.json?q=oop&limit=8")
     .then(res => res.json())
     .then(posts => 
